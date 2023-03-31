@@ -38,7 +38,6 @@ jobs:
           pytest
   # Build Docker image in a separate job so that it's not tainted by cached build/test files
   build-image:
-    build-image:
     # Only build image for PRs and merge to main
     if: github.event_name == 'pull_request' || github.ref_name == github.event.repository.default_branch
     needs: tests
